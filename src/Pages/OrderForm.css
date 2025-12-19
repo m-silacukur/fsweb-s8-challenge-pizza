@@ -1,0 +1,398 @@
+:root{
+  --red:#CE2829;
+  --yellow:#FDC913;
+  --text:#292929;
+  --muted:#5F5F5F;
+  --border:#D9D9D9;
+  --page:#FFFFFF;
+}
+
+.order-page{
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--text);
+  font-family: "Barlow", sans-serif;
+}
+
+.order-header{
+  background: var(--red);
+  height: 12.9375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 0.0625rem solid rgba(0,0,0,0.08);
+}
+
+.order-logo{
+  height: 2.75rem;
+  width: auto;
+}
+
+.order-breadcrumb{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.25rem;
+  width: min(33.1875rem, 92%);
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--page);
+  text-align: left;
+}
+.order-breadcrumb span{ opacity: 0.9; }
+.order-breadcrumb strong{ font-weight: 700; }
+
+.order-content{
+  width: min(33.1875rem, 92%);
+  margin: 2rem auto 4rem;
+}
+
+.pizza-info{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pizza-title{
+  margin: 0;
+  font-size: 1.375rem; 
+  font-weight: 600;
+  color: var(--text);
+}
+
+.price-row{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pizza-price{
+  margin: 0;
+  font-size: 1.75rem; 
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pizza-meta{
+  display: flex;
+  gap: 2.75rem;
+  font-size: 1rem; 
+  color: var(--muted);
+}
+
+.pizza-desc{
+  margin: 0;
+  font-size: 1rem; 
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.order-form{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-two-col{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.size-field{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field-label{
+  font-size: 1.25rem; 
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.75rem; 
+}
+
+.req{
+  color: var(--red);
+  margin-left: 0.25rem;
+}
+
+.radio{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem; 
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.radio input{
+  width: 1rem;
+  height: 1rem;
+}
+
+.select{
+  width: 10.5rem;
+  height: 2rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.25rem;
+  background: var(--page);
+  padding: 0 0.5rem;
+  font-size: 1rem; 
+  color: var(--muted);
+}
+
+.extras{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.section-title{
+  margin: 0;
+  font-size: 1.25rem; 
+  font-weight: 600;
+  color: var(--text);
+}
+
+.section-sub{
+  margin: 0 0 1rem;
+  font-size: 1rem; 
+  color: var(--muted);
+}
+
+.toppings-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
+  column-gap: 2.5rem;
+  row-gap: 1rem;
+}
+
+.checkbox{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem; 
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.checkbox input{
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.note{
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.textarea{
+  width: 100%;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  resize: none;
+  font-family: inherit;
+  font-size: 0.875rem; 
+  color: var(--text);
+}
+.textarea::placeholder{
+  color: var(--muted);
+  font-size: 0.875rem; 
+}
+
+.divider{
+  border: none;
+  border-top: 0.0625rem solid var(--border);
+  margin: 0.75rem 0 0;
+}
+
+.bottom-row{
+  display: grid;
+  grid-template-columns: 10.5rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.submit--mobile{ display: none; }
+
+.mobile-actions{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.qty{
+  display: grid;
+  grid-template-columns: 3.25rem 4rem 3.25rem;
+  height: 3.25rem;
+}
+
+.qty-btn{
+  background: var(--yellow);
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.qty-value{
+  display: grid;
+  place-items: center;
+  border-top: 0.0625rem solid var(--border);
+  border-bottom: 0.0625rem solid var(--border);
+  font-weight: 700;
+}
+
+.summary{
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-title{
+  margin: 0;
+  font-size: 1.25rem; 
+  font-weight: 700;
+  color: var(--text);
+}
+
+.summary-line{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.125rem; 
+  color: var(--muted);
+  font-weight: 600;
+}
+
+
+.summary-line.total{
+  font-size: 1.125rem; 
+  color: var(--red);
+}
+
+.submit{
+  margin-top: 1rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  background: var(--yellow);
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 1.125rem; 
+  color: var(--text);  
+}
+
+@media (max-width: 540px){
+  .order-header{
+    height: auto;
+    padding: 2.5rem 1.5rem 3.5rem;
+  }
+
+  .order-breadcrumb{
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.25rem;
+    transform: none;
+    width: auto;
+    margin: 0;
+    text-align: left;
+  }
+
+  .order-content{
+    margin-top: 1.5rem;
+  }
+
+  .form-two-col{
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .toppings-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    column-gap: 1.5rem;
+  }
+
+  .bottom-row{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .summary{
+    order: 1;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .mobile-actions{
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.25rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .qty{
+    width: 10.5rem;
+  }
+
+  .submit--desktop{ display: none; }
+  .submit--mobile{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.5rem;
+    height: 3.5rem;
+    margin-top: 0;
+  }
+}
+
+.text-input{
+  width: 100%;
+  height: 2.75rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.375rem;
+  padding: 0 1rem;
+  font-family: inherit;
+  background: var(--page);
+  font-size: 0.875rem; 
+  color: var(--text);
+}
+.text-input::placeholder{
+  color: var(--muted);
+  font-size: 0.875rem; 
+}
+
+.form-hint{
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--red);
+}
