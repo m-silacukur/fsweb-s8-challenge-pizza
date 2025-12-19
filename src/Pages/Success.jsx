@@ -37,7 +37,7 @@ export default function Success({ orderResponse }) {
         </h1>
 
         <section className="success-summary" data-cy="success-summary">
-          <div className="success-card" data-cy="summary-card">
+          <div className="success-card">
             <h2 className="card-title">Sipariş Özeti:</h2>
 
             <p className="card-row"><strong>Durum:</strong> Siparişiniz alındı.</p>
@@ -46,7 +46,7 @@ export default function Success({ orderResponse }) {
             <p className="card-row"><strong>İsim Soyisim:</strong> {fullName}</p>
           </div>
 
-          <div className="success-card" data-cy="details-card">
+          <div className="success-card">
             <h2 className="card-title">Sipariş Detayları:</h2>
 
             <p className="card-row"><strong>Ürün:</strong> {pizza}</p>

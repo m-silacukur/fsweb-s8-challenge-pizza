@@ -113,7 +113,7 @@ export default function OrderForm({ setOrderResponse }) {
   }
 
   return (
-    <div className="order-page">
+    <div className="order-page" data-cy="order-page">
       <header className="order-header">
         <img className="order-logo" src={logo} alt="Teknolojik Yemekler" />
         <p className="order-breadcrumb">
@@ -139,11 +139,11 @@ export default function OrderForm({ setOrderResponse }) {
             diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun
             ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak,
             düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli
-            lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.
+            lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.
           </p>
         </section>
 
-        <form className="order-form" onSubmit={handleSubmit}>
+        <form className="order-form" onSubmit={handleSubmit} data-cy="order-form">
           <div className="form-two-col">
             <fieldset className="size-field" aria-label="Boyut seçimi">
               <legend className="field-label">
@@ -159,6 +159,7 @@ export default function OrderForm({ setOrderResponse }) {
                   disabled={isSubmitting}
                   checked={size === "Küçük"}
                   onChange={(e) => setSize(e.target.value)}
+                  data-cy="size-kucuk"
                 />
                 Küçük
               </label>
@@ -171,6 +172,7 @@ export default function OrderForm({ setOrderResponse }) {
                   disabled={isSubmitting}
                   checked={size === "Orta"}
                   onChange={(e) => setSize(e.target.value)}
+                  data-cy="size-orta"
                 />
                 Orta
               </label>
@@ -183,6 +185,7 @@ export default function OrderForm({ setOrderResponse }) {
                   disabled={isSubmitting}
                   checked={size === "Büyük"}
                   onChange={(e) => setSize(e.target.value)}
+                  data-cy="size-buyuk"
                 />
                 Büyük
               </label>
@@ -200,6 +203,7 @@ export default function OrderForm({ setOrderResponse }) {
                 disabled={isSubmitting}
                 value={dough}
                 onChange={(e) => setDough(e.target.value)}
+                data-cy="dough-select"
               >
                 <option value="" disabled>
                   Hamur Kalınlığı
@@ -227,29 +231,28 @@ export default function OrderForm({ setOrderResponse }) {
             
 
             <div className="toppings-grid">
-              {TOPPINGS.map((t) => {
-                const checked = toppings.includes(t);
-                const disabled =
-                  (!checked && toppings.length >= 10) || isSubmitting;
+             {TOPPINGS.map((t, idx) => {
+              const checked = toppings.includes(t);
+              const disabled = (!checked && toppings.length >= 10) || isSubmitting;
 
-                return (
-                  <label key={t} className="checkbox">
-                    <input
-                      type="checkbox"
-                      name="toppings"
-                      value={t}
-                      checked={checked}
-                      disabled={disabled}
-                      onChange={(e) => toggleTopping(t, e.target.checked)}
-                    />
-                    <span>{t}</span>
-                  </label>
-                );
-              })}
+             return (
+             <label key={t} className="checkbox">
+             <input
+              type="checkbox"
+              name="toppings"
+              value={t}
+              checked={checked}
+              disabled={disabled}
+              onChange={(e) => toggleTopping(t, e.target.checked)}
+              data-cy={`topping-${idx}`}
+              />
+              <span>{t}</span>
+              </label>
+        );
+            })}
             </div>
           </section>
 
-          
           <section className="field">
             <label className="field-label" htmlFor="fullName">
               İsim Soyisim <span className="req">*</span>
@@ -265,6 +268,7 @@ export default function OrderForm({ setOrderResponse }) {
               disabled={isSubmitting}
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
+              data-cy="name-input"
             />
 
             {!nameOk && fullName.length > 0 && (
@@ -318,7 +322,7 @@ export default function OrderForm({ setOrderResponse }) {
               <button
                 className="submit submit--mobile"
                 type="submit"
-                data-cy="submit-order"
+                data-cy="submit-order-mobile"
                 disabled={!isValid || isSubmitting}
               >
                 {isSubmitting ? "GÖNDERİLİYOR..." : "SİPARİŞ VER"}
